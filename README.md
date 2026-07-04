@@ -1,21 +1,27 @@
-# George-Marius Cracu academic website
+# GeoPortfolio v1
 
-Static bilingual academic website for GitHub Pages.
+Site academic bilingv pentru GitHub Pages.
 
-## How to publish
-1. Create or open the repository `georgecracu.github.io`.
-2. Upload the contents of this folder to the root of the repository.
-3. Go to Settings → Pages.
-4. Source: Deploy from a branch.
-5. Branch: `main`, folder: `/ (root)`.
-6. Save and open `https://georgecracu.github.io`.
+## Cum actualizezi conținutul
 
-## How to edit
-- Main page structure: `index.html`
-- Visual design: `style.css`
-- Translations and behaviour: `script.js`
-- Projects/publications/map points: `data/site-data.js`
-- Replace `assets/profile-placeholder.svg` with your own photo/banner and update the CSS path if needed.
+Nu modifica `index.html` decât dacă vrei schimbări structurale. Pentru conținut, editează fișierele din folderul `data/`:
 
-## Notes
-The interactive map uses Leaflet and OpenStreetMap tiles loaded from public CDNs. It will work after the website is online.
+- `site.json` – date profil, linkuri academice, statistici
+- `research.json` – direcții de cercetare
+- `publications.json` – publicații
+- `projects.json` – proiecte
+- `fieldwork.json` – punctele de pe hartă
+
+## Cum adaugi o poză
+
+1. Încarcă poza în `assets/images/`, de exemplu `assets/images/fieldwork/piatra-mare-2026.jpg`.
+2. Adaugă referința în fișierul JSON potrivit, când vom activa galeria.
+
+## Publicare pe GitHub Pages
+
+Încarcă toate fișierele din acest folder direct în repository-ul `gmcracu.github.io`.
+Nu încărca arhiva ZIP, ci conținutul ei.
+
+## Versiune
+
+GeoPortfolio v1.0 – homepage academic + cercetare + publicații + proiecte + hartă interactivă.

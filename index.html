@@ -1,162 +1,159 @@
 <!doctype html>
-<html lang="ro" data-theme="dark">
+<html lang="ro" data-theme="light">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="George-Marius Cracu - Lecturer in Geography, GIS researcher and tourism geographer at Ovidius University of Constanța." />
-  <title>George-Marius Cracu | Academic Website</title>
+  <title>George-Marius Cracu | Geography • GIS • Tourism</title>
+  <meta name="description" content="Academic portfolio of George-Marius Cracu: Geography, GIS, tourism, spatial analysis and field research." />
+  <meta property="og:title" content="George-Marius Cracu | Geography • GIS • Tourism" />
+  <meta property="og:description" content="Exploring landscapes through GIS, spatial analysis and field research." />
+  <meta property="og:image" content="assets/images/profile/george-cracu-profile-optimized.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIINfQtcOfRzrTmZ9qh0i5nNxCDq+Wh4p9k=" crossorigin="" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="grain"></div>
   <header class="site-header">
-    <a class="brand" href="#top" aria-label="Homepage">
+    <a class="brand" href="#top" aria-label="George-Marius Cracu homepage">
       <span class="brand-mark">GC</span>
       <span class="brand-text">George-Marius Cracu</span>
     </a>
-    <button class="nav-toggle" aria-expanded="false" aria-label="Open navigation">☰</button>
     <nav class="nav" aria-label="Main navigation">
-      <a href="#about" data-i18n="nav.about">Despre</a>
-      <a href="#research" data-i18n="nav.research">Cercetare</a>
-      <a href="#projects" data-i18n="nav.projects">Proiecte</a>
-      <a href="#teaching" data-i18n="nav.teaching">Cursuri</a>
-      <a href="#publications" data-i18n="nav.publications">Publicații</a>
-      <a href="#fieldwork" data-i18n="nav.fieldwork">Teren</a>
-      <a href="#contact" data-i18n="nav.contact">Contact</a>
+      <a href="#about" data-i18n="nav_about">Despre</a>
+      <a href="#research" data-i18n="nav_research">Cercetare</a>
+      <a href="#publications" data-i18n="nav_publications">Publicații</a>
+      <a href="#projects" data-i18n="nav_projects">Proiecte</a>
+      <a href="#fieldwork" data-i18n="nav_fieldwork">Teren</a>
+      <a href="#contact" data-i18n="nav_contact">Contact</a>
     </nav>
     <div class="header-actions">
-      <button class="chip" id="themeToggle" aria-label="Toggle theme">◐</button>
-      <button class="chip lang" data-lang="ro">RO</button>
-      <button class="chip lang" data-lang="en">EN</button>
+      <button id="langToggle" class="chip" type="button">EN</button>
+      <button id="themeToggle" class="chip icon-chip" type="button" aria-label="Toggle theme">☾</button>
     </div>
   </header>
 
   <main id="top">
-    <section class="hero section-grid">
-      <div class="hero-copy reveal">
-        <p class="eyebrow" data-i18n="hero.eyebrow">Geografie aplicată • GIS • Turism • Cercetare de teren</p>
-        <h1 data-i18n="hero.title">George-Marius Cracu</h1>
-        <p class="lead" data-i18n="hero.lead">Lector universitar la Universitatea Ovidius din Constanța, geograf preocupat de analiză spațială, transformări urbane, turism, accesibilitate și educație geografică aplicată.</p>
-        <div class="hero-actions">
-          <a class="button primary" href="#research" data-i18n="hero.cta1">Explorează cercetarea</a>
-          <a class="button ghost" href="#contact" data-i18n="hero.cta2">Contact</a>
+    <section class="hero section-pad">
+      <div class="hero-bg-lines" aria-hidden="true"></div>
+      <div class="hero-content reveal">
+        <p class="eyebrow" data-i18n="hero_eyebrow">Geografie • GIS • Turism • Analiză spațială</p>
+        <h1>George-Marius Cracu</h1>
+        <p class="role" data-i18n="hero_role">Lector universitar | Cercetător GIS | Geograf al turismului</p>
+        <p class="tagline" data-i18n="hero_tagline">Explorarea peisajelor prin GIS, analiză spațială și cercetare de teren.</p>
+        <div class="hero-ctas">
+          <a class="btn primary" href="#publications" data-i18n="btn_publications">Vezi publicațiile</a>
+          <a class="btn ghost" href="#fieldwork" data-i18n="btn_map">Explorează harta</a>
+        </div>
+        <div class="profile-links" id="profileLinks"></div>
+      </div>
+      <div class="hero-visual reveal delay-1">
+        <div class="photo-card">
+          <img src="assets/images/profile/george-cracu-profile-optimized.jpg" alt="George-Marius Cracu" />
+          <div class="photo-caption" data-i18n="photo_caption">Geografie aplicată, hărți, teren și date spațiale.</div>
         </div>
       </div>
-      <aside class="hero-card reveal delay-1" aria-label="Profile card">
-        <div class="profile-orb"></div>
-        <h2 data-i18n="hero.cardTitle">Lecturer | GIS Researcher | Tourism Geographer</h2>
-        <p data-i18n="hero.cardText">O activitate academică construită la intersecția dintre hărți, teren, date spațiale și comunități.</p>
-        <div class="mini-stats">
-          <div><strong>17+</strong><span data-i18n="stats.years">ani în mediul universitar</span></div>
-          <div><strong>GIS</strong><span data-i18n="stats.focus">analiză spațială</span></div>
-          <div><strong>UOC</strong><span data-i18n="stats.affiliation">Constanța</span></div>
-        </div>
-      </aside>
     </section>
 
-    <section class="strip reveal" aria-label="Research keywords">
-      <span>GIS</span><span>Spatial Analysis</span><span>Tourism Geography</span><span>Coastal Urbanisation</span><span>Accessibility</span><span>Field Education</span>
+    <section class="metrics section-pad compact" aria-label="Academic metrics">
+      <div class="metrics-grid" id="metricsGrid"></div>
     </section>
 
-    <section id="about" class="section section-grid">
-      <div>
-        <p class="eyebrow" data-i18n="about.eyebrow">Profil academic</p>
-        <h2 data-i18n="about.title">Geografia ca infrastructură de înțelegere a lumii</h2>
+    <section id="about" class="section-pad split-section">
+      <div class="section-heading reveal">
+        <p class="eyebrow" data-i18n="about_eyebrow">Profil academic</p>
+        <h2 data-i18n="about_title">Un geograf între teren, laborator și hartă</h2>
       </div>
-      <div class="content-card reveal">
-        <p data-i18n="about.text1">Activitatea mea combină predarea geografiei aplicate cu cercetarea bazată pe GIS, observație de teren și analiză spațio-temporală. Sunt interesat de felul în care orașele, litoralul, spațiile montane și infrastructurile turistice se transformă sub presiunea proceselor economice, sociale și de mediu.</p>
-        <p data-i18n="about.text2">La Universitatea Ovidius din Constanța coordonez activități didactice și de cercetare, susțin inițiative studențești și dezvolt proiecte care aduc geografia mai aproape de teren, date și societate.</p>
+      <div class="about-copy reveal delay-1">
+        <p data-i18n="about_p1">Sunt lector universitar la Universitatea Ovidius din Constanța, unde predau discipline din zona Geografiei turismului, GIS, teledetecției, montanologiei și evaluării spațiilor montane.</p>
+        <p data-i18n="about_p2">Activitatea mea combină cercetarea aplicată, analiza spațială, practica de teren și formarea studenților. Mă interesează modul în care orașele, litoralul, spațiile verzi și peisajele turistice se transformă sub presiunea dezvoltării, mobilității și schimbărilor de mediu.</p>
         <div class="timeline">
-          <article><span>2008</span><p data-i18n="timeline.master">Master în Climatologie aplicată și protecția mediului atmosferic</p></article>
-          <article><span>2015</span><p data-i18n="timeline.phd">Doctorat: dinamica peisajului în Masivul Ceahlău</p></article>
-          <article><span>2016</span><p data-i18n="timeline.coord">Coordonator al programului de licență Geografie</p></article>
-          <article><span>2024</span><p data-i18n="timeline.senate">Membru în Senatul Universității</p></article>
-          <article><span>2025</span><p data-i18n="timeline.vd">Prodecan, Facultatea de Științe ale Naturii și Științe Agricole</p></article>
+          <div><span>2008</span><p data-i18n="tl_2008">Master în Climatologie aplicată</p></div>
+          <div><span>2015</span><p data-i18n="tl_2015">Doctor în Geografie, Universitatea din București</p></div>
+          <div><span>2016</span><p data-i18n="tl_2016">Lector universitar, Universitatea Ovidius din Constanța</p></div>
+          <div><span>2024+</span><p data-i18n="tl_2024">Cercetare, proiecte, GIS, teren și dezvoltare academică</p></div>
         </div>
       </div>
     </section>
 
-    <section id="research" class="section">
-      <div class="section-head reveal">
-        <p class="eyebrow" data-i18n="research.eyebrow">Direcții de cercetare</p>
-        <h2 data-i18n="research.title">Hărți, modele și povești teritoriale</h2>
+    <section id="research" class="section-pad surface-section">
+      <div class="section-heading center reveal">
+        <p class="eyebrow" data-i18n="research_eyebrow">Research explorer</p>
+        <h2 data-i18n="research_title">Direcții de cercetare</h2>
+        <p data-i18n="research_subtitle">Un portofoliu construit la intersecția dintre GIS, turism, urbanizare, litoral și cercetare de teren.</p>
       </div>
-      <div class="cards six">
-        <article class="research-card reveal"><span>01</span><h3>GIS & Spatial Analysis</h3><p data-i18n="research.gis">Modele de accesibilitate, analiză rețea, date raster și vectoriale, indicatori de echitate spațială.</p></article>
-        <article class="research-card reveal"><span>02</span><h3>Urban Geography</h3><p data-i18n="research.urban">Transformări urbane, spații verzi, acces la servicii și relația dintre populație și infrastructură.</p></article>
-        <article class="research-card reveal"><span>03</span><h3>Coastal Dynamics</h3><p data-i18n="research.coast">Urbanizare litorală, turism, presiune imobiliară și schimbări de utilizare a terenurilor.</p></article>
-        <article class="research-card reveal"><span>04</span><h3>Tourism Geography</h3><p data-i18n="research.tourism">Fluxuri turistice, platforme online, destinații emergente și impact local.</p></article>
-        <article class="research-card reveal"><span>05</span><h3>Protected Areas</h3><p data-i18n="research.protected">Arii naturale protejate, educație pentru mediu, interpretare și turism responsabil.</p></article>
-        <article class="research-card reveal"><span>06</span><h3>Fieldwork Pedagogy</h3><p data-i18n="research.field">Practica de teren ca laborator viu pentru formarea geografilor.</p></article>
-      </div>
+      <div class="cards-grid" id="researchGrid"></div>
     </section>
 
-    <section id="projects" class="section alt">
-      <div class="section-head reveal">
-        <p class="eyebrow" data-i18n="projects.eyebrow">Proiecte și inițiative</p>
-        <h2 data-i18n="projects.title">De la cercetare aplicată la comunități de învățare</h2>
+    <section id="fieldwork" class="section-pad map-section">
+      <div class="section-heading reveal">
+        <p class="eyebrow" data-i18n="map_eyebrow">Geografia activității</p>
+        <h2 data-i18n="map_title">Harta cercetărilor și practicii de teren</h2>
+        <p data-i18n="map_subtitle">Locuri, proiecte, articole și experiențe de teren, organizate spațial.</p>
       </div>
-      <div class="project-grid" id="projectGrid"></div>
+      <div id="researchMap" class="map reveal delay-1" aria-label="Interactive research map"></div>
     </section>
 
-    <section id="teaching" class="section section-grid">
-      <div class="reveal">
-        <p class="eyebrow" data-i18n="teaching.eyebrow">Predare</p>
-        <h2 data-i18n="teaching.title">Cursuri, laboratoare și teren</h2>
-        <p class="muted" data-i18n="teaching.text">Predarea este construită în jurul aplicațiilor practice, al datelor reale și al contactului direct cu teritoriul.</p>
+    <section id="publications" class="section-pad">
+      <div class="section-heading reveal">
+        <p class="eyebrow" data-i18n="pub_eyebrow">Publicații</p>
+        <h2 data-i18n="pub_title">Lucrări selectate</h2>
       </div>
-      <div class="course-list reveal delay-1">
-        <span>GIS</span><span>Cartografie</span><span>Geografia turismului</span><span>Montanologie</span><span>Topografie</span><span>Geografie urbană</span><span>Analiză spațială</span><span>Practica de teren</span>
-      </div>
-    </section>
-
-    <section id="publications" class="section">
-      <div class="section-head reveal">
-        <p class="eyebrow" data-i18n="pub.eyebrow">Publicații</p>
-        <h2 data-i18n="pub.title">Lucrări selectate</h2>
-      </div>
-      <div class="toolbar reveal">
-        <input id="pubSearch" type="search" placeholder="Caută publicații / Search publications" />
-        <button class="filter active" data-filter="all">All</button>
-        <button class="filter" data-filter="isi">ISI/Scopus</button>
-        <button class="filter" data-filter="conference">Conference</button>
+      <div class="toolbar reveal delay-1">
+        <input id="publicationSearch" type="search" placeholder="Caută după titlu, jurnal, tag..." data-placeholder-ro="Caută după titlu, jurnal, tag..." data-placeholder-en="Search by title, journal, tag..." />
+        <select id="publicationFilter" aria-label="Filter publications">
+          <option value="all">All</option>
+          <option value="ISI">ISI</option>
+          <option value="BDI">BDI</option>
+        </select>
       </div>
       <div class="publication-list" id="publicationList"></div>
     </section>
 
-    <section id="fieldwork" class="section alt">
-      <div class="section-head reveal">
-        <p class="eyebrow" data-i18n="field.eyebrow">Harta activității</p>
-        <h2 data-i18n="field.title">Cercetare și practică de teren</h2>
-        <p class="muted" data-i18n="field.text">Zone de interes academic, terenuri studențești și studii aplicate.</p>
+    <section id="projects" class="section-pad surface-section">
+      <div class="section-heading center reveal">
+        <p class="eyebrow" data-i18n="projects_eyebrow">Granturi & colaborări</p>
+        <h2 data-i18n="projects_title">Proiecte de cercetare</h2>
       </div>
-      <div id="map" class="map reveal" role="application" aria-label="Academic map"></div>
+      <div class="project-grid" id="projectGrid"></div>
     </section>
 
-    <section id="contact" class="section contact-section">
-      <div class="content-card reveal">
-        <p class="eyebrow" data-i18n="contact.eyebrow">Contact</p>
-        <h2 data-i18n="contact.title">Pentru colaborări, proiecte și activități academice</h2>
-        <p>Universitatea Ovidius din Constanța • Facultatea de Științe ale Naturii și Științe Agricole</p>
-        <div class="contact-links">
-          <a href="mailto:cracu.george@gmail.com">cracu.george@gmail.com</a>
-          <a href="#" aria-label="Google Scholar">Google Scholar</a>
-          <a href="#" aria-label="ORCID">ORCID</a>
-          <a href="#" aria-label="ResearchGate">ResearchGate</a>
-        </div>
+    <section id="teaching" class="section-pad split-section">
+      <div class="section-heading reveal">
+        <p class="eyebrow" data-i18n="teach_eyebrow">Teaching</p>
+        <h2 data-i18n="teach_title">Cursuri, laboratoare și practică</h2>
+      </div>
+      <div class="teaching-panel reveal delay-1">
+        <ul>
+          <li>GIS</li>
+          <li data-i18n="course_tourism">Geografia turismului</li>
+          <li data-i18n="course_mountains">Montanologie și turism montan</li>
+          <li data-i18n="course_remote">Teledetecție</li>
+          <li data-i18n="course_geotourism">Geoturism</li>
+          <li data-i18n="course_eval">Evaluarea și valorificarea turistică a spațiilor montane</li>
+        </ul>
+        <p data-i18n="teach_note">Secțiunea va fi extinsă cu fișe de disciplină, resurse GIS, teme de licență/disertație și materiale pentru studenți.</p>
+      </div>
+    </section>
+
+    <section id="contact" class="section-pad contact-section">
+      <div class="contact-card reveal">
+        <p class="eyebrow" data-i18n="contact_eyebrow">Contact</p>
+        <h2 data-i18n="contact_title">Hai să cartografiem următoarea idee</h2>
+        <p data-i18n="contact_text">Pentru colaborări, proiecte, activități cu studenții sau discuții academice, mă poți contacta prin e-mail sau prin profilurile academice.</p>
+        <div class="contact-actions" id="contactLinks"></div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <p>© <span id="year"></span> George-Marius Cracu. <span data-i18n="footer.text">Academic website hosted with GitHub Pages.</span></p>
+  <footer class="site-footer">
+    <p>© <span id="year"></span> George-Marius Cracu</p>
+    <p data-i18n="footer_text">Built as an academic digital portfolio.</p>
   </footer>
 
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
-  <script src="data/site-data.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script src="script.js"></script>
 </body>
 </html>
