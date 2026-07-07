@@ -1,0 +1,1 @@
+Copiază conținutul arhivei în rădăcina repository-ului. Include pagina Practică de teren, două pagini noi și imaginile în assets/images/fieldwork/piatra-craiului-2023/.
